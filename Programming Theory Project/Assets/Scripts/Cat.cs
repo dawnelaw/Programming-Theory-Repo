@@ -10,10 +10,26 @@ public class Cat : MonoBehaviour
     public bool IsHunter = true;
     public string Size = "unknown size";
     public bool LikesWater;
+ 
+    private int lifeSpan = 0;
+
+    // ENCAPSULATION of lifeSpan
+    public void SetLifeSpan(int value)
+    {
+        lifeSpan = value;
+    }
+
+    public int GetLifeSpan()    
+    {
+        return lifeSpan;
+    }
+
 
     private void Start()
     {
-        MakeSound();
+        Name = "Generic cat object";
+        lifeSpan = 0;
+
     }
     public virtual void MakeSound()
     {
@@ -28,6 +44,23 @@ public class Cat : MonoBehaviour
     public virtual void Run()
     {
         Debug.Log("Cat Runs");
+    }
+
+    //ABSTRACTION of DisplayLifeSpan()
+    public virtual void DisplayLifeSpan()
+    {
+        string lifeSpanMsg = "";
+        
+        if (lifeSpan <= 0)
+        {
+            lifeSpanMsg = "No life span set for " + Name;
+        }
+        else
+        {
+            lifeSpanMsg = "Life span is " + lifeSpan + " years.";
+        }
+
+        Debug.Log(lifeSpanMsg);
     }
 
 }
