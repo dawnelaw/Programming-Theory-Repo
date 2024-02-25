@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AsianLeopard : MonoBehaviour
+public class AsianLeopard : Cat
 {
     // Start is called before the first frame update
-    void Start()
+    public override void MakeSound()
     {
-        
+        // base.MakeSound();
+        Debug.Log("Asian Leopard makes a sound.");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CarriesPreyIntoTrees()
     {
-        
+
     }
 }

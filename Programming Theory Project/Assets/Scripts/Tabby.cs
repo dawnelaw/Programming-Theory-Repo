@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tabby : MonoBehaviour
+public class Tabby : Cat
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool isDomesticated = true;
+    public override void MakeSound()
     {
-        
+        // base.MakeSound();
+        Debug.Log("Tabby meows.");
+        Debug.Log("just before calling Run from cat class");
+        Run();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public void PlaysWithHumans()
+{
+
+ }
+
+
+
 }
